@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JRC Project Form</title>
+</head>
+<body>
+    <h1>JRC Project Form</h1>
+    <form action="submit_form.php" method="POST">
+        <table>
+            <thead>
+                <tr>
+                    <th>JRC Project #</th>
+                    <th>Date</th>
+                    <th>Address</th>
+                    <th>Type</th>
+                    <th>Number</th>
+                    <th>Length (ft)</th>
+                    <th>Width (ft)</th>
+                    <th>Depth (in)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php for ($i = 1; $i <= 50; $i++): ?>
+                    <tr>
+                        <td><input type="text" name="jrc_project_number_<?php echo $i; ?>" required></td>
+                        <td><input type="date" name="date_<?php echo $i; ?>" required></td>
+                        <td><input type="text" name="address_<?php echo $i; ?>" required></td>
+                        <td>
+                            <select name="type_<?php echo $i; ?>" required>
+                                <option value="Bulk - D&D Minimum">Bulk - D&D Minimum</option>
+                                <option value="Bulk - D&D Sq. Ft.">Bulk - D&D Sq. Ft.</option>
+                                <option value="Bulk - La Pointe">Bulk - La Pointe</option>
+                                <option value="Bulk - MP Minimum">Bulk - MP Minimum</option>
+                                <option value="Bulk - MP Ped Ramp">Bulk - MP Ped Ramp</option>
+                                <option value="Bulk - MP Sq. Ft.">Bulk - MP Sq. Ft.</option>
+                                <option value="Bulk - MP V Curb Install">Bulk - MP V Curb Install</option>
+                                <option value="Bulk - USI Asphalt Core">Bulk - USI Asphalt Core</option>
+                                <option value="Bulk - USI Asphalt Cutout">Bulk - USI Asphalt Cutout</option>
+                                <option value="Bulk - USI Asphalt USI Sq. Ft.">Bulk - USI Asphalt USI Sq. Ft.</option>
+                                <option value="Bulk - USI Box Adjustment">Bulk - USI Box Adjustment</option>
+                                <option value="Bulk - USI Box Expansion">Bulk - USI Box Expansion</option>
+                                <option value="Bulk - USI City Curb and Gutter">Bulk - USI City Curb and Gutter</option>
+                                <option value="Bulk - USI Hourly">Bulk - USI Hourly</option>
+                                <option value="Bulk - USI Minimum">Bulk - USI Minimum</option>
+                                <option value="Bulk - USI Ped Ramp">Bulk - USI Ped Ramp</option>
+                                <option value="Bulk - USI Residential Curb">Bulk - USI Residential Curb</option>
+                                <option value="Bulk - USI Sq. Ft.">Bulk - USI Sq. Ft.</option>
+                                <option value="Bulk - USI V Curb Install">Bulk - USI V Curb Install</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="number_<?php echo $i; ?>" required>
+                                <?php for ($j = 1; $j <= 20; $j++): ?>
+                                    <option value="<?php echo $j; ?>"><?php echo $j; ?></option>
+                                <?php endfor; ?>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="length_<?php echo $i; ?>" required>
+                                <?php for ($j = 1; $j <= 50; $j++): ?>
+                                    <option value="<?php echo $j; ?>"><?php echo $j; ?></option>
+                                <?php endfor; ?>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="width_<?php echo $i; ?>" required>
+                                <?php for ($j = 1; $j <= 50; $j++): ?>
+                                    <option value="<?php echo $j; ?>"><?php echo $j; ?></option>
+                                <?php endfor; ?>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="depth_<?php echo $i; ?>" required>
+                                <?php for ($j = 1; $j <= 20; $j++): ?>
+                                    <option value="<?php echo $j; ?>"><?php echo $j; ?></option>
+                                <?php endfor; ?>
+                            </select>
+                        </td>
+                    </tr>
+                <?php endfor; ?>
+            </tbody>
+        </table>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
